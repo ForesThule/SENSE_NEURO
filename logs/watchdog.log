@@ -1,0 +1,795 @@
+﻿[2026-07-04 05:37:03] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:37:05] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:37:25] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:37:28] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:39:26] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 05:39:27] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:39:29] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:41:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:43:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:45:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:53:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:55:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 05:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 05:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 06:01:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 06:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 06:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 06:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 06:05:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 06:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 06:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 06:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:23:08] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 10:25:02] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 10:31:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:33:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:35:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:37:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:37:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:39:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:39:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:41:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:41:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:43:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:43:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:45:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:45:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:47:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:47:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:49:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:51:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:51:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:53:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:55:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:57:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 10:59:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 10:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:01:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:03:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:05:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:07:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:07:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:09:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:11:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:13:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:15:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:17:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:19:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:21:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:23:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:25:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:27:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:29:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:31:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:33:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:35:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:37:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:39:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:41:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:43:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:45:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:47:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:49:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:51:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:53:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:55:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 11:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 11:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:01:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:05:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:09:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:11:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:13:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:23:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:25:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:27:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:31:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:33:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:35:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:37:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:39:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:41:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:43:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:45:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:53:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:55:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 12:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 12:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:01:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:05:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:09:24] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 13:11:11] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 13:13:03] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:13:06] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:23:02] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 13:25:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:27:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:31:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:33:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:35:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:37:02] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 13:39:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:41:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:43:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:45:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:53:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:55:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 13:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 13:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:01:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:05:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:09:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:11:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:13:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:23:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:25:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:27:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:31:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:33:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:35:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:37:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:39:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:41:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:43:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:45:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:53:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:55:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 14:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 14:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:01:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:05:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:09:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:11:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:13:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:23:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:23:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:25:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:25:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:27:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:27:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:29:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:29:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:31:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:31:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:33:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:33:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:35:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:35:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:37:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:37:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:39:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:39:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:41:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:41:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:43:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:43:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:45:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:45:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:47:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:47:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:49:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:49:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:51:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:51:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:53:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:53:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:55:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:55:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:57:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:57:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 15:59:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 15:59:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:01:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:01:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:03:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:03:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:05:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:05:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:07:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:07:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:09:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:09:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:11:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:11:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:13:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:15:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:15:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:17:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:17:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:19:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:21:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:23:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:25:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:27:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:29:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:31:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:33:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:35:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:37:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:39:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:41:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:43:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:45:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:47:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:49:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:51:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:53:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:55:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:57:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 16:59:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 16:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:01:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:03:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:05:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:07:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:09:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:11:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:13:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:23:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:25:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:27:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:31:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:33:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:35:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:37:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:39:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:41:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:43:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:45:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:53:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:55:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 17:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 17:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:01:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:05:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:09:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:11:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:13:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:23:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:25:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:27:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:31:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:33:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:35:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:37:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:39:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:41:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:43:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:45:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:53:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:55:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 18:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 18:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:01:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:05:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:09:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:09:05] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:11:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:13:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:15:05] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:23:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:23:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:25:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:25:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:27:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:27:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:29:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:29:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:31:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:31:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:33:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:33:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:35:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:35:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:37:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:37:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:39:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:39:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:41:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:41:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:43:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:43:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:45:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:45:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:47:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:47:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:49:05] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:51:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:51:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:53:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:53:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:55:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:57:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 19:59:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 19:59:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:01:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:03:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:03:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:05:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:07:05] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:09:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:11:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:11:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:13:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:15:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:15:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:17:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:19:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:21:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:23:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:23:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:25:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:25:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:27:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:31:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:33:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:35:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:37:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:39:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:41:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:43:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:45:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:47:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:49:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:53:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:55:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:57:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 20:59:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 20:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:01:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:03:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:05:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:07:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:09:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:11:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:13:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:15:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:17:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:21:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:23:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:25:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:27:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:29:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:31:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:31:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:33:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:35:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:35:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:37:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:39:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:39:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:41:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:41:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:43:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:43:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:45:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:45:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:49:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:49:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:51:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:51:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:53:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:53:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:55:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:55:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:57:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:57:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 21:59:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 21:59:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:01:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:01:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:03:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:03:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:05:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:05:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:07:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:07:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:09:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:09:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:11:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:11:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:13:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:13:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:15:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:15:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:17:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:17:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:19:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:19:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:21:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:21:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:23:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:25:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:27:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:29:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:29:04] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 22:31:02] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 22:33:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:33:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:35:45] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:35:48] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:37:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:37:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:39:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:39:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:41:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:41:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:43:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:43:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:45:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:45:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:47:02] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:47:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:49:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:49:03] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 22:51:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:51:03] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 22:53:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:53:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:55:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:55:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 22:57:01] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 22:59:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 22:59:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 23:01:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 23:01:03] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 23:03:01] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 23:05:01] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 23:13:01] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 23:15:01] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 23:19:01] launcher not running -> schtasks /run NEIRYSTART
+[2026-07-04 23:23:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 23:23:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 23:25:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 23:25:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 23:27:01] heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)
+[2026-07-04 23:27:04] launcher alive -> it will respawn python within a few seconds
+[2026-07-04 23:29:02] launcher not running -> schtasks /run NEIRYSTART

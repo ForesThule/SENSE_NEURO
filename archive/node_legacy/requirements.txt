@@ -1,0 +1,2 @@
+pyneurosdk2==1.0.15
+pyem-st-artifacts==1.0.5
