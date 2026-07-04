@@ -401,6 +401,9 @@ def main():
         return
     beat()
     log('=== Neiry LAN узел -> головной %s (метрики :%d, события :%d, UDP JSON) ===' % (HOST, PORT, EVT_PORT))
+    if not TARGET:
+        log('!!! NEIRY_ADDR не задан — подключусь к ЛЮБОМУ сильнейшему бенду. На выставке обязательно задай адрес в START_NEIRY_LAN.bat (python scan_bands.py)')
+        send_event('no_target_addr')
     dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_EVT_PORT=%s NEIRY_ADDR=%s | RSSI_MIN=%d STALL_SEC=%d' % (HOST, PORT, EVT_PORT, TARGET or '-', RSSI_MIN, STALL_SEC))
     send_event('node_start', target=TARGET or None)
     while True:
