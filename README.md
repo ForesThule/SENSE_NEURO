@@ -27,6 +27,25 @@ vendor\               — установочные артефакты (numpy .wh
 archive\              — старые версии (.v1.bak, *_v2.legacy.py), легаси-нода (node_legacy)
 ```
 
+## Установка на новый мини-ПК (с нуля)
+Пути в коде жёсткие — репозиторий должен лежать ровно в `C:\SENSE_TECH`.
+1. Python 3.11 x64 (галка «Add python.exe to PATH»).
+2. `git clone https://github.com/ForesThule/SENSE_NEURO.git C:\SENSE_TECH`
+   (либо ZIP с GitHub → распаковать в `C:\SENSE_TECH`).
+3. `pip install pyneurosdk2==1.0.15 pyem-st-artifacts==1.0.5`
+   и `pip install C:\SENSE_TECH\vendor\numpy-2.4.6-cp311-cp311-win_amd64.whl`.
+4. Bluetooth включить, бенд **НЕ сопрягать** (сопряжение = Code 108).
+5. `python scan_bands.py` → `copy band_id.example.txt band_id.txt` → вписать адрес.
+6. В `START_NEIRY_LAN.bat` выставить порты своей стены:
+   efir-1 R 9003/9013 · efir-2 C 9002/9012 · efir-3 L 9001/9011 (NEIRY_PORT/NEIRY_EVT_PORT).
+7. Задачи (cmd от администратора):
+   `schtasks /create /tn NEIRYSTART /sc onlogon /tr "C:\SENSE_TECH\START_NEIRY_LAN.bat" /f`
+   `schtasks /create /tn NEURWATCH /sc minute /mo 2 /tr "wscript.exe C:\SENSE_TECH\watchdog_hidden.vbs" /f`
+8. Автологон: `vendor\Autologon64.exe` (Enable) — подъём после отключения света.
+9. Проверка: запустить `START_NEIRY_LAN.bat`, дождаться калибровки 100%,
+   на головном увидеть метрики. Обновление: `git pull` в `C:\SENSE_TECH`
+   (band_id.txt и logs\ не трогает).
+
 ## Автозапуск и надёжность (24/7)
 - **NEIRYSTART** (задача, onLogon) → `START_NEIRY_LAN.bat` → вечный цикл python.
 - **NEURWATCH** (задача, /mo 2) → `watchdog_hidden.vbs` → `_neurwatch.ps1`: ридер мёртв
