@@ -45,8 +45,10 @@
 #     NEIRY_HEAD     = 192.168.1.34   (LAN-IP головного; или 100.105.1.91 Tailscale)
 #     NEIRY_PORT     = 9003           (метрики)
 #     NEIRY_EVT_PORT = 9004           (события; без env = NEIRY_PORT+10)
-#     NEIRY_ADDR     = F7:14:0E:FE:9D:20  (переопределение; без env — вшитый
-#                      BAND_ADDR; к чужим бендам узел НЕ подключается никогда)
+#     NEIRY_ADDR     = ...            (ручное переопределение; штатно ID бенда
+#                      лежит в C:\SENSE_TECH\band_id.txt — свой на каждом
+#                      мини-ПК, в .gitignore; без ID узел ждёт и НЕ подключается
+#                      к чужим бендам никогда)
 #
 #  Запуск: Запустить_нейробенд_LAN.bat  (надеть бенд, дождаться калибровки 100%)
 # =====================================================================
@@ -65,8 +67,22 @@ from em_st_artifacts import emotional_math
 HOST = os.environ.get('NEIRY_HEAD', '192.168.1.34')
 PORT = int(os.environ.get('NEIRY_PORT', 9000))
 EVT_PORT = int(os.environ.get('NEIRY_EVT_PORT', PORT + 10))  # дефолт по стене: 9013/9012/9011 — три узла не смешиваются
-BAND_ADDR = 'F7:14:0E:FE:9D:20'   # вшитый СВОЙ бенд (Serial=820891) — узел работает только с ним
-TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or BAND_ADDR).lower()  # env переопределяет вшитый
+BAND_FILE = 'C:/SENSE_TECH/band_id.txt'   # ID своего бенда: уникален на КАЖДОМ мини-ПК, в .gitignore
+
+
+def _read_band_file():
+    """Первая непустая некомментарная строка band_id.txt: Address или Serial бенда."""
+    try:
+        for line in open(BAND_FILE, encoding='utf-8'):
+            line = line.strip()
+            if line and not line.startswith('#'):
+                return line
+    except Exception:
+        pass
+    return ''
+
+
+TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or _read_band_file()).lower()  # env переопределяет файл
 
 RSSI_MIN = -85        # слабее — не подключаемся, ждём пока подойдёт ближе
 STALL_SEC = 15        # нет сигнала столько секунд -> принудительный разрыв
@@ -384,6 +400,7 @@ def single_instance_lock():
 
 
 def main():
+    global TARGET
     try:
         os.makedirs(HOURLY_DIR, exist_ok=True)
     except Exception:
@@ -398,7 +415,12 @@ def main():
         return
     beat()
     log('=== Neiry LAN узел -> головной %s (метрики :%d, события :%d, UDP JSON) ===' % (HOST, PORT, EVT_PORT))
-    src = 'env NEIRY_ADDR' if os.environ.get('NEIRY_ADDR', '').strip() else 'вшитый BAND_ADDR'
+    while not TARGET:
+        log('!!! нет ID бенда: создай %s (одна строка — адрес из python scan_bands.py) или задай env NEIRY_ADDR — жду 30с' % BAND_FILE)
+        send_event('no_band_id')
+        sleep_beating(30)
+        TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or _read_band_file()).lower()
+    src = 'env NEIRY_ADDR' if os.environ.get('NEIRY_ADDR', '').strip() else 'band_id.txt'
     log('целевой бенд: %s (%s)' % (TARGET, src))
     dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_EVT_PORT=%s NEIRY_ADDR=%s | RSSI_MIN=%d STALL_SEC=%d' % (HOST, PORT, EVT_PORT, TARGET or '-', RSSI_MIN, STALL_SEC))
     send_event('node_start', target=TARGET or None)

@@ -2,6 +2,9 @@
 logs/
 _reader.log
 
+# ID бенда — уникален на каждом мини-ПК (см. band_id.example.txt)
+band_id.txt
+
 # python
 __pycache__/
 *.pyc

@@ -11,7 +11,10 @@ neiry_lan_node.py     — ридер: метрики после калибров
                         сигнала -> разрыв и рескан), пауза 15 с на Code 108,
                         порог RSSI -85 при скане, лок «один экземпляр»
                         (localhost:47653), почасовые логи, поток событий в TD
-START_NEIRY_LAN.bat   — лаунчер: env NEIRY_HEAD/PORT/EVT_PORT/ADDR + вечный цикл python (рестарт 3с)
+START_NEIRY_LAN.bat   — лаунчер: env NEIRY_HEAD/PORT/EVT_PORT + вечный цикл python (рестарт 3с)
+band_id.txt           — не в git: ID СВОЕГО бенда (Address/Serial), уникален на
+                        каждом мини-ПК; шаблон — band_id.example.txt. Без него
+                        узел ждёт и ни к чему не подключается
 scan_bands.py         — найти BLE-адрес своего бэнда
 _neurwatch.ps1        — сторож (задача NEURWATCH, каждые 2 мин): оживляет ридер
 watchdog_hidden.vbs   — обёртка: запускает _neurwatch.ps1 без мигающего окна
@@ -41,7 +44,8 @@ efir-3 = 9001 (L)**. Ключи: `rel_attention rel_relaxation inst_attention
 inst_relaxation alpha_data beta_data theta_data`. Стену гонит `inst_attention`.
 Идут только после калибровки 100%. Ключи в пакете НЕ гарантированы все сразу —
 брать по имени, отсутствующие пропускать.
-Значения — в `START_NEIRY_LAN.bat` (NEIRY_HEAD / NEIRY_PORT / NEIRY_ADDR).
+Сеть/порты — в `START_NEIRY_LAN.bat` (NEIRY_HEAD / NEIRY_PORT); ID бенда — в
+`band_id.txt` (env NEIRY_ADDR переопределяет его вручную).
 
 ## События (дополнение к контракту, отдельный порт)
 Служебный поток: UDP JSON+'\n' → головной, порт **NEIRY_EVT_PORT = метрики+10**
@@ -57,7 +61,7 @@ session_end session_error duplicate_instance`. Патч метрик они не
 |---|---|
 | Проверить живость | `type logs\neiry_heartbeat.txt` (unix-ts растёт) · хвост `_reader.log` |
 | Полный разбор инцидента | `logs\reader\neiry_YYYY-MM-DD_HH.log` (DBG: каждый пакет, сканы, трейсбеки) |
-| Найти адрес бэнда | `python scan_bands.py` → вписать в `START_NEIRY_LAN.bat` (NEIRY_ADDR) |
+| Найти адрес бэнда | `python scan_bands.py` → вписать в `band_id.txt` (шаблон band_id.example.txt) |
 | Ручной старт | `schtasks /run /tn NEIRYSTART` (или запустить `START_NEIRY_LAN.bat`) |
 | Остановить | `taskkill /F /IM python.exe` (лаунчер поднимет заново; совсем — снять NEIRYSTART) |
 | Лог сторожа | `logs\watchdog.log` (пишется только при инцидентах) |
