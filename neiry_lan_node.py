@@ -69,6 +69,18 @@ try:
 except Exception:
     pass
 
+# нативные DLL Neiry падают молча (access violation, python-исключения нет);
+# faulthandler успевает дампить python-стек момента краша — по нему видно,
+# упало в push_data/process_data_arr или в колбэке SDK
+import faulthandler
+try:
+    _crash_log = open(LOG_DIR + '/crash.log', 'a')
+    _crash_log.write('--- start %s pid=%s ---\n' % (time.strftime('%Y-%m-%d %H:%M:%S'), os.getpid()))
+    _crash_log.flush()
+    faulthandler.enable(_crash_log)
+except Exception:
+    pass
+
 from neurosdk.scanner import Scanner
 from neurosdk.cmn_types import *
 from em_st_artifacts.utils import lib_settings, support_classes
@@ -440,7 +452,7 @@ def main():
         TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or _read_band_file()).lower()
     src = 'env NEIRY_ADDR' if os.environ.get('NEIRY_ADDR', '').strip() else 'band_id.txt'
     log('целевой бенд: %s (%s)' % (TARGET, src))
-    dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_EVT_PORT=%s NEIRY_ADDR=%s | RSSI_MIN=%d STALL_SEC=%d' % (HOST, PORT, EVT_PORT, TARGET or '-', RSSI_MIN, STALL_SEC))
+    dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_EVT_PORT=%s NEIRY_ADDR=%s | RSSI_MIN=%d STALL_SEC=%d CALIB_STALL=%d' % (HOST, PORT, EVT_PORT, TARGET or '-', RSSI_MIN, STALL_SEC, CALIB_STALL_SEC))
     send_event('node_start', target=TARGET or None)
     while True:
         try:
