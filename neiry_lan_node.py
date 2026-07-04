@@ -7,7 +7,18 @@
 #   - HOST = IP головного ПК по LAN (мини-ПК шлёт на головной, не на себя)
 #   - UDP latest-value-wins (не сокет-на-пакет) -> нет WinError 10055,
 #     рестарт головного/TD прозрачен
-#   - формат JSON НЕ изменён — патч трогать не нужно
+#   - формат JSON метрик НЕ изменён — патч трогать не нужно
+#
+#  Два потока на головной (оба UDP JSON, по строке на пакет):
+#   1) МЕТРИКИ  -> NEIRY_PORT (9003): прежний формат, только после
+#      калибровки: rel/inst attention/relaxation, alpha/beta/theta.
+#   2) СОБЫТИЯ  -> NEIRY_EVT_PORT (дефолт NEIRY_PORT+10): служебные пакеты вида
+#      {"event": "...", "ts": <unix>, ...} — старт узла, скан, коннект,
+#      заряд, ход калибровки, контакт электродов, потеря связи, ошибки.
+#      Отдельный порт, чтобы НЕ ломать существующий парсер метрик;
+#      в TD достаточно добавить второй UDP In DAT. Если художница
+#      хочет всё в один порт — выставить NEIRY_EVT_PORT = NEIRY_PORT,
+#      но тогда её колбэк обязан игнорировать пакеты с ключом "event".
 #
 #  Надёжность:
 #   - heartbeat ~1/с в C:\SENSE_TECH\logs\neiry_heartbeat.txt (его ждёт
@@ -31,9 +42,10 @@
 #   при прогонах в несколько суток.
 #
 #  Настройка (env, задаёт launcher .bat):
-#     NEIRY_HEAD = 192.168.1.34   (LAN-IP головного; или 100.105.1.91 Tailscale)
-#     NEIRY_PORT = 9003
-#     NEIRY_ADDR = F7:14:0E:FE:9D:20  (свой бэнд: Address / Serial / Name)
+#     NEIRY_HEAD     = 192.168.1.34   (LAN-IP головного; или 100.105.1.91 Tailscale)
+#     NEIRY_PORT     = 9003           (метрики)
+#     NEIRY_EVT_PORT = 9004           (события; без env = NEIRY_PORT+10)
+#     NEIRY_ADDR     = F7:14:0E:FE:9D:20  (свой бэнд: Address / Serial / Name)
 #
 #  Запуск: Запустить_нейробенд_LAN.bat  (надеть бенд, дождаться калибровки 100%)
 # =====================================================================
@@ -51,6 +63,7 @@ from em_st_artifacts import emotional_math
 
 HOST = os.environ.get('NEIRY_HEAD', '192.168.1.34')
 PORT = int(os.environ.get('NEIRY_PORT', 9000))
+EVT_PORT = int(os.environ.get('NEIRY_EVT_PORT', PORT + 10))  # дефолт по стене: 9013/9012/9011 — три узла не смешиваются
 TARGET = os.environ.get('NEIRY_ADDR', '').strip().lower()  # свой бэнд: BLE Address / Serial / Name
 
 RSSI_MIN = -85        # слабее — не подключаемся, ждём пока подойдёт ближе
@@ -155,7 +168,7 @@ def _get_sock():
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)   # UDP
         s.setblocking(False)                                    # drop при заполнении, НИКОГДА не блокирует
         _sock['s'] = s
-        log('UDP-сокет к %s:%d готов (latest-value-wins)' % (HOST, PORT))
+        log('UDP-сокет к %s (метрики :%d, события :%d) готов' % (HOST, PORT, EVT_PORT))
         return s
     except Exception:
         _sock['s'] = None
@@ -163,6 +176,7 @@ def _get_sock():
 
 
 def send_to_td(data):
+    """Пакет метрик -> NEIRY_PORT. Формат контракта, НЕ менять."""
     s = _get_sock()
     if s is None:
         return False
@@ -172,6 +186,23 @@ def send_to_td(data):
     except Exception as e:
         dbg('send_to_td drop: %s' % e)
         return False   # UDP: просто дропаем пакет (важно последнее значение), без reset/reconnect
+
+
+def send_event(name, **fields):
+    """Ключевое событие -> NEIRY_EVT_PORT: {"event": name, "ts": unix, ...}."""
+    pkt = {'event': name, 'ts': int(time.time())}
+    pkt.update(fields)
+    s = _get_sock()
+    if s is None:
+        dbg('event %s: нет сокета, не отправлено' % name)
+        return False
+    try:
+        s.sendto((json.dumps(pkt) + '\n').encode('utf-8'), (HOST, EVT_PORT))
+        dbg('event -> :%d %s' % (EVT_PORT, json.dumps(pkt)))
+        return True
+    except Exception as e:
+        dbg('event %s drop: %s' % (name, e))
+        return False
 
 
 def build_math():
@@ -199,12 +230,19 @@ def build_math():
 
 def on_state(sensor, state):
     global connected
+    was = connected
     connected = ('InRange' in str(state))
     log('состояние бенда: %s' % state)
+    if was != connected:
+        send_event('band_state', in_range=connected, state=str(state))
 
 
 def on_battery(sensor, battery):
     log('заряд: %s%%' % battery)
+    try:
+        send_event('battery', percent=int(battery))
+    except Exception:
+        send_event('battery', percent=str(battery))
 
 
 def on_signal(sensor, data):
@@ -222,17 +260,20 @@ def on_signal(sensor, data):
             _last_calib = pct
             bad = math.is_both_sides_artifacted()
             log('калибровка %d%%%s' % (pct, '  (плохой контакт)' if bad else ''))
+            send_event('calibration', percent=pct, bad_contact=bool(bad))
         return
 
     if not calib_done:
         calib_done = True
         log('=== КАЛИБРОВКА ГОТОВА, метрики идут на головной ===')
+        send_event('calibration_done')
 
     # контакт электродов после калибровки: логируем только переходы
     art = math.is_both_sides_artifacted()
     if art != _last_art:
         _last_art = art
         log('контакт электродов: %s' % ('ПЛОХОЙ (артефакты с обеих сторон)' if art else 'ок'))
+        send_event('contact', ok=not art)
 
     out = {}
     md = math.read_mental_data_arr()
@@ -264,6 +305,7 @@ def session():
     scanner = Scanner([SensorFamily.LEHeadband])
     scanner.sensorsChanged = lambda sc, s: None
     log('ищу нейробенд (Bluetooth)...')
+    send_event('scanning')
     scanner.start()
     info = None
     for _ in range(30):
@@ -287,15 +329,18 @@ def session():
         rssi = getattr(cand, 'RSSI', None)
         if rssi is not None and rssi < RSSI_MIN:
             log('бенд найден, но сигнал слабый (RSSI %s < %s) — не подключаюсь, жду' % (rssi, RSSI_MIN))
+            send_event('weak_signal', rssi=rssi, rssi_min=RSSI_MIN)
             continue
         info = cand
         break
     scanner.stop()
     if info is None:
         log('бенд не найден — повтор через 5с')
+        send_event('band_not_found')
         del scanner; sleep_beating(5); return
     log('найден %s, подключаюсь...' % getattr(info, 'Name', info))
     log('BAND Address=%s Serial=%s Name=%s RSSI=%s' % (getattr(info,'Address',''),getattr(info,'SerialNumber',''),getattr(info,'Name',''),getattr(info,'RSSI','')))
+    send_event('band_found', address=str(getattr(info,'Address','')), serial=str(getattr(info,'SerialNumber','')), rssi=getattr(info,'RSSI',None))
     sensor = scanner.create_sensor(info)
     connected = True
     sensor.sensorStateChanged = on_state
@@ -305,16 +350,20 @@ def session():
     if sensor.is_supported_command(SensorCommand.StartSignal):
         sensor.exec_command(SensorCommand.StartSignal)
         log('сигнал пошёл; бенд плотно, электроды смочить (калибровка ~1 мин)')
+        send_event('signal_started')
         _last_data['t'] = time.time()
         while connected:
             beat()
             time.sleep(1)
             if time.time() - _last_data['t'] > STALL_SEC:
                 log('сигнал не идёт %dс при живом соединении — принудительный разрыв, рескан' % STALL_SEC)
+                send_event('signal_stall', stall_sec=STALL_SEC)
                 break
         else:
             log('связь с бендом потеряна')
+            send_event('band_lost')
     log('сессия закрывается (отправлено пакетов: %d)' % _sent)
+    send_event('session_end', packets=_sent, calibrated=calib_done)
     try: sensor.exec_command(SensorCommand.StopSignal)
     except Exception: pass
     try: sensor.disconnect()
@@ -325,25 +374,49 @@ def session():
     math = None
 
 
+def single_instance_lock():
+    """Лок 'один экземпляр': держим TCP-порт на localhost. Второй процесс
+    не сможет забиндиться и выйдет — двое дерутся за один бенд (Code 108)."""
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind(('127.0.0.1', 47653))
+        s.listen(1)
+        return s
+    except OSError:
+        return None
+
+
 def main():
     try:
         os.makedirs(HOURLY_DIR, exist_ok=True)
     except Exception:
         pass
+    lock = single_instance_lock()
+    if lock is None:
+        # НЕ трогаем heartbeat: он принадлежит живому экземпляру, иначе
+        # дубликат маскирует фриз основного процесса от вотчдога
+        log('!!! другой экземпляр уже запущен — выхожу (проверь второй launcher/задачу NEIRYSTART)')
+        send_event('duplicate_instance')
+        time.sleep(10)   # чтобы цикл .bat не молотил рестарты впустую
+        return
     beat()
-    log('=== Neiry LAN узел -> головной %s:%d (UDP JSON, контракт художницы) ===' % (HOST, PORT))
-    dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_ADDR=%s | RSSI_MIN=%d STALL_SEC=%d' % (HOST, PORT, TARGET or '-', RSSI_MIN, STALL_SEC))
+    log('=== Neiry LAN узел -> головной %s (метрики :%d, события :%d, UDP JSON) ===' % (HOST, PORT, EVT_PORT))
+    dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_EVT_PORT=%s NEIRY_ADDR=%s | RSSI_MIN=%d STALL_SEC=%d' % (HOST, PORT, EVT_PORT, TARGET or '-', RSSI_MIN, STALL_SEC))
+    send_event('node_start', target=TARGET or None)
     while True:
         try:
             session()
         except KeyboardInterrupt:
-            log('остановлено пользователем'); break
+            log('остановлено пользователем')
+            send_event('node_stop', reason='keyboard')
+            break
         except Exception as e:
             msg = str(e)
             wait = CODE108_WAIT if '108' in msg else 3
             hint = '  (бенд сопряжён в Windows? выключи/включи бенд)' if '108' in msg else ''
             log('сбой сессии: %s — переподключение %dс%s' % (msg, wait, hint))
             dbg('traceback:\n' + traceback.format_exc())
+            send_event('session_error', message=msg[:200], code108=('108' in msg), retry_sec=wait)
             sleep_beating(wait)
 
 

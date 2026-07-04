@@ -1,0 +1,11 @@
+# runtime artefacts — пишутся ридером/вотчдогом на месте, в git им не место
+logs/
+_reader.log
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store

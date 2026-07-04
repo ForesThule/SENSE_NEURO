@@ -16,7 +16,9 @@ function Note($m){
     try { $line | Out-File -Append -Encoding utf8 $LOG } catch {}
 }
 
-$py = @(Get-Process python -ErrorAction SilentlyContinue)
+# only OUR reader processes — other pythons on the box must not mask/suffer
+$py = @(Get-CimInstance Win32_Process -Filter "Name='python.exe'" -ErrorAction SilentlyContinue |
+       Where-Object { $_.CommandLine -like '*neiry_lan_node.py*' })
 
 # heartbeat freshness
 $fresh = $false
@@ -33,8 +35,8 @@ if ($py.Count -gt 0 -and $fresh) { exit 0 }
 
 # python alive but hung -> kill; launcher loop respawns
 if ($py.Count -gt 0 -and -not $fresh) {
-    Note 'heartbeat stale > 60s -> reader hung, killing python (launcher will respawn)'
-    Stop-Process -Name python -Force -ErrorAction SilentlyContinue
+    Note 'heartbeat stale > 60s -> reader hung, killing reader python (launcher will respawn)'
+    $py | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
     Start-Sleep -Seconds 2
 }
 
