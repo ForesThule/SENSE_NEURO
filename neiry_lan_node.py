@@ -45,7 +45,8 @@
 #     NEIRY_HEAD     = 192.168.1.34   (LAN-IP головного; или 100.105.1.91 Tailscale)
 #     NEIRY_PORT     = 9003           (метрики)
 #     NEIRY_EVT_PORT = 9004           (события; без env = NEIRY_PORT+10)
-#     NEIRY_ADDR     = F7:14:0E:FE:9D:20  (свой бэнд: Address / Serial / Name)
+#     NEIRY_ADDR     = F7:14:0E:FE:9D:20  (переопределение; без env — вшитый
+#                      BAND_ADDR; к чужим бендам узел НЕ подключается никогда)
 #
 #  Запуск: Запустить_нейробенд_LAN.bat  (надеть бенд, дождаться калибровки 100%)
 # =====================================================================
@@ -64,7 +65,8 @@ from em_st_artifacts import emotional_math
 HOST = os.environ.get('NEIRY_HEAD', '192.168.1.34')
 PORT = int(os.environ.get('NEIRY_PORT', 9000))
 EVT_PORT = int(os.environ.get('NEIRY_EVT_PORT', PORT + 10))  # дефолт по стене: 9013/9012/9011 — три узла не смешиваются
-TARGET = os.environ.get('NEIRY_ADDR', '').strip().lower()  # свой бэнд: BLE Address / Serial / Name
+BAND_ADDR = 'F7:14:0E:FE:9D:20'   # вшитый СВОЙ бенд (Serial=820891) — узел работает только с ним
+TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or BAND_ADDR).lower()  # env переопределяет вшитый
 
 RSSI_MIN = -85        # слабее — не подключаемся, ждём пока подойдёт ближе
 STALL_SEC = 15        # нет сигнала столько секунд -> принудительный разрыв
@@ -315,17 +317,12 @@ def session():
         if not f:
             continue
         dbg('скан: ' + '; '.join('%s/%s/RSSI=%s' % (getattr(s,'Name',''), getattr(s,'Address',''), getattr(s,'RSSI','?')) for s in f))
-        cand = None
-        if TARGET:
-            m = [s for s in f if TARGET in (str(getattr(s,'Address','')).lower()) or TARGET in (str(getattr(s,'SerialNumber','')).lower()) or TARGET in (str(getattr(s,'Name','')).lower())]
-            if m:
-                cand = m[0]
-            else:
-                log('svoy band [%s] ne nayden (vidno %d chuzhih) - zhdu' % (TARGET, len(f)))
-        else:
-            cand = max(f, key=lambda s: getattr(s,'RSSI',-999))
-        if cand is None:
+        # только СВОЙ бенд — к чужим не подключаемся никогда
+        m = [s for s in f if TARGET in (str(getattr(s,'Address','')).lower()) or TARGET in (str(getattr(s,'SerialNumber','')).lower()) or TARGET in (str(getattr(s,'Name','')).lower())]
+        if not m:
+            log('svoy band [%s] ne nayden (vidno %d chuzhih) - zhdu' % (TARGET, len(f)))
             continue
+        cand = m[0]
         rssi = getattr(cand, 'RSSI', None)
         if rssi is not None and rssi < RSSI_MIN:
             log('бенд найден, но сигнал слабый (RSSI %s < %s) — не подключаюсь, жду' % (rssi, RSSI_MIN))
@@ -401,9 +398,8 @@ def main():
         return
     beat()
     log('=== Neiry LAN узел -> головной %s (метрики :%d, события :%d, UDP JSON) ===' % (HOST, PORT, EVT_PORT))
-    if not TARGET:
-        log('!!! NEIRY_ADDR не задан — подключусь к ЛЮБОМУ сильнейшему бенду. На выставке обязательно задай адрес в START_NEIRY_LAN.bat (python scan_bands.py)')
-        send_event('no_target_addr')
+    src = 'env NEIRY_ADDR' if os.environ.get('NEIRY_ADDR', '').strip() else 'вшитый BAND_ADDR'
+    log('целевой бенд: %s (%s)' % (TARGET, src))
     dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_EVT_PORT=%s NEIRY_ADDR=%s | RSSI_MIN=%d STALL_SEC=%d' % (HOST, PORT, EVT_PORT, TARGET or '-', RSSI_MIN, STALL_SEC))
     send_event('node_start', target=TARGET or None)
     while True:
