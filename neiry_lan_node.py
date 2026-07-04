@@ -60,6 +60,15 @@ import json
 import socket
 import traceback
 
+LOG_DIR = 'C:/SENSE_TECH/logs'
+HOURLY_DIR = LOG_DIR + '/reader'
+HB_PATH = LOG_DIR + '/neiry_heartbeat.txt'
+try:
+    # ДО импорта neurosdk: SDK при импорте сразу заводит logs/sdk_log.log
+    os.makedirs(HOURLY_DIR, exist_ok=True)
+except Exception:
+    pass
+
 from neurosdk.scanner import Scanner
 from neurosdk.cmn_types import *
 from em_st_artifacts.utils import lib_settings, support_classes
@@ -88,10 +97,6 @@ TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or _read_band_file()).lower()
 RSSI_MIN = -85        # слабее — не подключаемся, ждём пока подойдёт ближе
 STALL_SEC = 15        # нет сигнала столько секунд -> принудительный разрыв
 CODE108_WAIT = 15     # пауза после Cannot create BLE device (ждём освобождения GATT)
-
-LOG_DIR = 'C:/SENSE_TECH/logs'
-HOURLY_DIR = LOG_DIR + '/reader'
-HB_PATH = LOG_DIR + '/neiry_heartbeat.txt'
 
 # ---- служебное ----
 math = None
