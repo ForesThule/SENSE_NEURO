@@ -96,6 +96,9 @@ TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or _read_band_file()).lower()
 
 RSSI_MIN = -85        # слабее — не подключаемся, ждём пока подойдёт ближе
 STALL_SEC = 15        # нет сигнала столько секунд -> принудительный разрыв
+CALIB_STALL_SEC = 180 # калибровка не растёт столько секунд -> разрыв и рескан
+                      # (данные идут, но грязные — Neiry не засчитывает окна,
+                      # обычный сталл-детектор этого не видит)
 CODE108_WAIT = 15     # пауза после Cannot create BLE device (ждём освобождения GATT)
 
 # ---- служебное ----
@@ -107,6 +110,7 @@ _last_art = None
 _sent = 0
 _last_beat = 0.0
 _last_data = {'t': 0.0}
+_calib_prog = {'t': 0.0}   # время последнего РОСТА процента калибровки
 _sock = {'s': None}
 _logf = {'hour': None, 'f': None}
 
@@ -282,6 +286,7 @@ def on_signal(sensor, data):
         pct = math.get_calibration_percents()
         if pct != _last_calib:
             _last_calib = pct
+            _calib_prog['t'] = time.time()
             bad = math.is_both_sides_artifacted()
             log('калибровка %d%%%s' % (pct, '  (плохой контакт)' if bad else ''))
             send_event('calibration', percent=pct, bad_contact=bool(bad))
@@ -371,12 +376,17 @@ def session():
         log('сигнал пошёл; бенд плотно, электроды смочить (калибровка ~1 мин)')
         send_event('signal_started')
         _last_data['t'] = time.time()
+        _calib_prog['t'] = time.time()
         while connected:
             beat()
             time.sleep(1)
             if time.time() - _last_data['t'] > STALL_SEC:
                 log('сигнал не идёт %dс при живом соединении — принудительный разрыв, рескан' % STALL_SEC)
                 send_event('signal_stall', stall_sec=STALL_SEC)
+                break
+            if not calib_done and time.time() - _calib_prog['t'] > CALIB_STALL_SEC:
+                log('калибровка застряла на %d%% дольше %dс (грязный сигнал) — разрыв, рескан' % (max(_last_calib, 0), CALIB_STALL_SEC))
+                send_event('calibration_stall', percent=max(_last_calib, 0), stall_sec=CALIB_STALL_SEC)
                 break
         else:
             log('связь с бендом потеряна')
