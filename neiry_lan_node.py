@@ -44,7 +44,8 @@
 #  Настройка (env, задаёт launcher .bat):
 #     NEIRY_HEAD     = 192.168.1.34   (LAN-IP головного; или 100.105.1.91 Tailscale)
 #     NEIRY_PORT     = 9003           (метрики)
-#     NEIRY_EVT_PORT = 9004           (события; без env = NEIRY_PORT+10)
+#     NEIRY_EVT_PORT = 9013           (события; без env = NEIRY_PORT+10:
+#                      efir-1 9013, efir-2 9012, efir-3 9011)
 #     NEIRY_ADDR     = ...            (ручное переопределение; штатно ID бенда
 #                      лежит в C:\SENSE_TECH\band_id.txt — свой на каждом
 #                      мини-ПК, в .gitignore; без ID узел ждёт и НЕ подключается
@@ -65,7 +66,7 @@ from em_st_artifacts.utils import lib_settings, support_classes
 from em_st_artifacts import emotional_math
 
 HOST = os.environ.get('NEIRY_HEAD', '192.168.1.34')
-PORT = int(os.environ.get('NEIRY_PORT', 9000))
+PORT = int(os.environ.get('NEIRY_PORT', 9003))  # дефолт = стена R; штатно задаёт .bat
 EVT_PORT = int(os.environ.get('NEIRY_EVT_PORT', PORT + 10))  # дефолт по стене: 9013/9012/9011 — три узла не смешиваются
 BAND_FILE = 'C:/SENSE_TECH/band_id.txt'   # ID своего бенда: уникален на КАЖДОМ мини-ПК, в .gitignore
 
@@ -415,6 +416,8 @@ def main():
         return
     beat()
     log('=== Neiry LAN узел -> головной %s (метрики :%d, события :%d, UDP JSON) ===' % (HOST, PORT, EVT_PORT))
+    if 'NEIRY_PORT' not in os.environ:
+        log('!!! NEIRY_PORT не задан — использую дефолт %d (стена R). Запускай через START_NEIRY_LAN.bat' % PORT)
     while not TARGET:
         log('!!! нет ID бенда: создай %s (одна строка — адрес из python scan_bands.py) или задай env NEIRY_ADDR — жду 30с' % BAND_FILE)
         send_event('no_band_id')
