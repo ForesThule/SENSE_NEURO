@@ -274,6 +274,57 @@ def build_math():
     return m
 
 
+def dump_band_info(sensor):
+    """Всё, что можно вытащить из бенда через SDK: серийник, прошивка, железо,
+    батарея, каналы, частота, фичи/команды/параметры. Каждое поле читается
+    защищённо — недоступное просто пропускаем (DBG скажет почему)."""
+    info = {}
+
+    def grab(key, fn):
+        try:
+            v = fn()
+            if v is not None:
+                info[key] = v
+        except Exception as e:
+            dbg('band_info: %s недоступно (%s)' % (key, e))
+
+    grab('name', lambda: str(sensor.name))
+    grab('address', lambda: str(sensor.address))
+    grab('serial', lambda: str(sensor.serial_number))
+    grab('family', lambda: str(sensor.sensor_family))
+    grab('state', lambda: str(sensor.state))
+    grab('battery', lambda: int(sensor.batt_power))
+    grab('channels', lambda: int(sensor.channels_count))
+    grab('sampling_frequency', lambda: str(sensor.sampling_frequency))
+    grab('gain', lambda: str(sensor.gain))
+    grab('data_offset', lambda: str(sensor.data_offset))
+    grab('firmware_mode', lambda: str(sensor.firmware_mode))
+
+    def _ver():
+        v = sensor.version
+        return 'FW %s.%s.%s / HW %s.%s.%s / Ext %s' % (
+            getattr(v, 'FwMajor', '?'), getattr(v, 'FwMinor', '?'), getattr(v, 'FwPatch', '?'),
+            getattr(v, 'HwMajor', '?'), getattr(v, 'HwMinor', '?'), getattr(v, 'HwPatch', '?'),
+            getattr(v, 'ExtMajor', '?'))
+    grab('version', _ver)
+
+    grab('features', lambda: ', '.join(str(x) for x in sensor.features))
+    grab('commands', lambda: ', '.join(str(x) for x in sensor.commands))
+    grab('parameters', lambda: ', '.join('%s[%s]' % (getattr(p, 'Param', p), getattr(p, 'ParamAccess', '?')) for p in sensor.parameters))
+
+    for k in ('name', 'address', 'serial', 'family', 'version', 'firmware_mode',
+              'battery', 'channels', 'sampling_frequency', 'gain', 'data_offset', 'state'):
+        if k in info:
+            log('бенд-инфо: %s = %s' % (k, info[k]))
+    for k in ('features', 'commands', 'parameters'):
+        if k in info:
+            dbg('бенд-инфо %s: %s' % (k, info[k]))
+
+    send_event('band_info', **{k: info[k] for k in
+        ('serial', 'address', 'name', 'family', 'version', 'firmware_mode',
+         'battery', 'channels', 'sampling_frequency') if k in info})
+
+
 def on_state(sensor, state):
     global connected
     was = connected
@@ -395,6 +446,7 @@ def session():
         sensor.sensorStateChanged = on_state
         sensor.batteryChanged = on_battery
         sensor.signalDataReceived = on_signal
+        dump_band_info(sensor)
         math = build_math()
         if sensor.is_supported_command(SensorCommand.StartSignal):
             sensor.exec_command(SensorCommand.StartSignal)
