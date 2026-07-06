@@ -56,6 +56,14 @@ CALIB_STALL_SEC = 180 # калибровка не растёт столько с
 CODE108_WAIT = 15     # пауза после Cannot create BLE device (ждём освобождения GATT)
 GATE_WAIT = 120       # сколько ждать шлюз подключения, с
 
+# --- детекция «ободок снят» ---
+# основной путь: импеданс электродов (StartSignalAndResist — сопротивление
+# меряется параллельно сигналу, калибровку/метрики не прерывает);
+# резервный: устойчивые артефакты с обеих сторон, если режим не поддержан
+RESIST_OHM = 2_500_000   # все каналы выше порога = электроды не на коже
+WORN_OFF_SEC = 5         # столько подряд «нет контакта» -> ободок СНЯТ
+WORN_ON_SEC = 3          # столько подряд «есть контакт» -> ободок НАДЕТ
+
 LOG_DIR = 'C:/SENSE_TECH/logs'
 HOURLY_DIR = LOG_DIR + '/reader_%d' % INSTANCE
 HB_PATH = LOG_DIR + '/neiry_heartbeat_%d.txt' % INSTANCE
@@ -94,6 +102,10 @@ _sent = 0
 _last_beat = 0.0
 _last_data = {'t': 0.0}
 _calib_prog = {'t': 0.0}   # время последнего РОСТА процента калибровки
+_worn = {'state': None, 'cand': None, 'cand_t': 0.0}   # None = ещё неизвестно
+_use_resist = {'on': False}     # активен ли импеданс-режим в этой сессии
+_resist_last = {}               # последние сопротивления по каналам, Ом
+_resist_dbg = {'t': 0.0}
 _sock = {'s': None}
 _logf = {'hour': None, 'f': None}
 _io_lock = threading.Lock()   # колбэки SDK приходят из своих потоков
@@ -333,6 +345,49 @@ def dump_band_info(sensor):
         dbg('band_info event drop: %s' % e)
 
 
+def _worn_update(has_contact, source):
+    """Гистерезис «надет/снят»: состояние меняется только после WORN_ON/OFF_SEC
+    стабильного кандидата — одиночные всплески импеданса/артефактов не считаются."""
+    now = time.time()
+    cand = bool(has_contact)
+    if cand != _worn['cand']:
+        _worn['cand'] = cand
+        _worn['cand_t'] = now
+        return
+    need = WORN_ON_SEC if cand else WORN_OFF_SEC
+    if now - _worn['cand_t'] >= need and _worn['state'] != cand:
+        _worn['state'] = cand
+        kohm = {ch: (None if v == float('inf') else int(v / 1000)) for ch, v in _resist_last.items()}
+        if cand:
+            log('ОБОДОК НАДЕТ (%s)' % source)
+            send_event('band_worn', source=source, resist_kohm=kohm)
+        else:
+            log('ОБОДОК СНЯТ (%s)' % source)
+            send_event('band_removed', source=source, resist_kohm=kohm)
+
+
+def on_resist(sensor, data):
+    """Импеданс электродов (режим сигнал+сопротивление). Ободок на голове:
+    каналы от сотен кОм до ~2 МОм; снят — за порогом на всех каналах."""
+    try:
+        d = data[-1] if isinstance(data, (list, tuple)) and data else data
+        vals = {}
+        for ch in ('T3', 'T4', 'O1', 'O2'):
+            try:
+                v = float(getattr(d, ch))
+            except Exception:
+                v = float('inf')
+            vals[ch] = v
+    except Exception:
+        return
+    _resist_last.update(vals)
+    _worn_update(any(v < RESIST_OHM for v in vals.values()), 'resist')
+    now = time.time()
+    if now - _resist_dbg['t'] > 5.0:
+        _resist_dbg['t'] = now
+        dbg('resist kOhm: ' + ', '.join('%s=%s' % (ch, 'inf' if v == float('inf') else int(v / 1000)) for ch, v in vals.items()))
+
+
 def on_state(sensor, state):
     global connected
     was = connected
@@ -376,6 +431,9 @@ def on_signal(sensor, data):
 
     # контакт электродов после калибровки: логируем только переходы
     art = math.is_both_sides_artifacted()
+    if not _use_resist['on']:
+        # резервная детекция снятия: импеданс-режим недоступен, судим по артефактам
+        _worn_update(not art, 'artifacts')
     if art != _last_art:
         _last_art = art
         log('контакт электродов: %s' % ('ПЛОХОЙ (артефакты с обеих сторон)' if art else 'ок'))
@@ -407,6 +465,9 @@ def on_signal(sensor, data):
 def session():
     global math, connected, calib_done, _last_calib, _last_art
     math = None; connected = False; calib_done = False; _last_calib = -1; _last_art = None
+    _worn.update(state=None, cand=None, cand_t=0.0)
+    _use_resist['on'] = False
+    _resist_last.clear()
     sensor = None
     scanner = Scanner([SensorFamily.LEHeadband])
     scanner.sensorsChanged = lambda sc, s: None
@@ -456,11 +517,26 @@ def session():
         sensor.signalDataReceived = on_signal
         dump_band_info(sensor)
         math = build_math()
-        if sensor.is_supported_command(SensorCommand.StartSignal):
+        # предпочитаем «сигнал+сопротивление»: импеданс = явная детекция снятия
+        sr_cmd = getattr(SensorCommand, 'StartSignalAndResist', None)
+        use_sr = False
+        if sr_cmd is not None and hasattr(sensor, 'resistDataReceived'):
+            try:
+                use_sr = bool(sensor.is_supported_command(sr_cmd))
+            except Exception:
+                use_sr = False
+        if use_sr:
+            sensor.resistDataReceived = on_resist
+            _use_resist['on'] = True
+            sensor.exec_command(sr_cmd)
+            started = True
+            log('сигнал+импеданс пошли; детекция снятия ободка по сопротивлению электродов')
+            send_event('signal_started', resist=True)
+        elif sensor.is_supported_command(SensorCommand.StartSignal):
             sensor.exec_command(SensorCommand.StartSignal)
             started = True
-            log('сигнал пошёл; бенд плотно, электроды смочить (калибровка ~1 мин)')
-            send_event('signal_started')
+            log('сигнал пошёл (импеданс-режим недоступен, снятие — по артефактам)')
+            send_event('signal_started', resist=False)
     finally:
         gate_release()
     if started:
@@ -482,6 +558,10 @@ def session():
             send_event('band_lost')
     log('сессия закрывается (отправлено пакетов: %d)' % _sent)
     send_event('session_end', packets=_sent, calibrated=calib_done)
+    try:
+        if _use_resist['on']:
+            sensor.exec_command(getattr(SensorCommand, 'StopSignalAndResist'))
+    except Exception: pass
     try: sensor.exec_command(SensorCommand.StopSignal)
     except Exception: pass
     try: sensor.disconnect()
