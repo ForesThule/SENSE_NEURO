@@ -8,7 +8,7 @@
 #  ЭТОТ ФАЙЛ СГЕНЕРИРОВАН из шаблона (см. README) — правки вносить в шаблон
 #  и перегенерировать все три, иначе экземпляры разъедутся.
 #
-#  Бенд:    @@ADDR@@  (env NEIRY_ADDR переопределяет)
+#  Бенд:    @@ADDR@@  (вшит; env НЕ переопределяет — см. комментарий у PORT)
 #  Метрики: UDP JSON -> NEIRY_HEAD:@@PORT@@   (контракт художницы, НЕ менять)
 #  События: UDP JSON -> NEIRY_HEAD:@@EVT@@   {"event": ..., "band": "@@LABEL@@", ...}
 #
@@ -43,9 +43,12 @@ START_DELAY = @@DELAY@@    # сдвиг старта, с
 LOCK_PORT = @@LOCKPORT@@   # лок «один экземпляр» (47653 + INSTANCE)
 
 HOST = os.environ.get('NEIRY_HEAD', '192.168.1.34')
-PORT = int(os.environ.get('NEIRY_PORT', @@PORT@@))          # метрики
-EVT_PORT = int(os.environ.get('NEIRY_EVT_PORT', @@EVT@@))   # события
-TARGET = (os.environ.get('NEIRY_ADDR', '').strip() or BAND_ADDR).lower()
+# порты и бенд НАМЕРЕННО без env-переопределений: `set NEIRY_PORT=9003` от
+# старого START_NEIRY_LAN.bat живёт в сессии cmd до её закрытия, и экземпляр C
+# уезжал метриками на порт стены R (поймано в бою 2026-07-06)
+PORT = @@PORT@@        # метрики
+EVT_PORT = @@EVT@@     # события
+TARGET = BAND_ADDR.lower()
 
 RSSI_MIN = int(os.environ.get('NEIRY_RSSI_MIN', -85))  # слабее — не подключаемся
 STALL_SEC = 15        # нет сигнала столько секунд -> принудительный разрыв
@@ -456,8 +459,8 @@ def main():
         return
     beat()
     log('=== Neiry узел [%s] %d/3 -> головной %s (метрики :%d, события :%d, UDP JSON) ===' % (BAND_LABEL, INSTANCE, HOST, PORT, EVT_PORT))
-    dbg('env: NEIRY_HEAD=%s NEIRY_PORT=%s NEIRY_EVT_PORT=%s TARGET=%s | RSSI_MIN=%d STALL_SEC=%d CALIB_STALL=%d DELAY=%d' % (HOST, PORT, EVT_PORT, TARGET, RSSI_MIN, STALL_SEC, CALIB_STALL_SEC, START_DELAY))
-    log('целевой бенд: %s (%s)' % (TARGET, 'env NEIRY_ADDR' if os.environ.get('NEIRY_ADDR', '').strip() else 'вшитый'))
+    dbg('cfg: HEAD=%s PORT=%d EVT=%d TARGET=%s | RSSI_MIN=%d STALL_SEC=%d CALIB_STALL=%d DELAY=%d' % (HOST, PORT, EVT_PORT, TARGET, RSSI_MIN, STALL_SEC, CALIB_STALL_SEC, START_DELAY))
+    log('целевой бенд: %s (вшитый)' % TARGET)
     send_event('node_start', target=TARGET, instance=INSTANCE)
     if START_DELAY > 0:
         log('сдвиг старта %dс (очередь к BT-адаптеру)' % START_DELAY)
