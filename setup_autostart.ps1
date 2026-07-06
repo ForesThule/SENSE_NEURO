@@ -8,6 +8,14 @@
 $ErrorActionPreference = 'SilentlyContinue'
 $BASE = 'C:\SENSE_TECH'
 
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()
+           ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) {
+    'ERROR: not elevated. schtasks create/delete needs Administrator.'
+    'Open PowerShell via "Run as administrator" and re-run this script.'
+    exit 1
+}
+
 '=== 1) stopping running readers/launchers ==='
 Get-CimInstance Win32_Process -Filter "Name='python.exe'" |
   Where-Object { $_.CommandLine -like '*neiry_*' } |
