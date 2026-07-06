@@ -430,6 +430,9 @@ def on_signal(sensor, data):
             bad = math.is_both_sides_artifacted()
             log('калибровка %d%%%s' % (pct, '  (плохой контакт)' if bad else ''))
             send_event('calibration', percent=pct, bad_contact=bool(bad))
+            # лёгкий пакет в поток метрик: канал calib тикает 0..100 на стене
+            # ещё до готовности (метрик тут нет — математика их пока не даёт)
+            send_to_td({'calib': pct, 'worn': 0 if _worn['state'] is False else 1})
         return
 
     if not calib_done:
@@ -460,9 +463,12 @@ def on_signal(sensor, data):
         out['beta_data'] = sd[0].beta
         out['theta_data'] = sd[0].theta
     if out:
-        # доп. канал для TD: 1 = надет (или ещё не определено), 0 = явно снят.
-        # Идёт обычным полем в том же пакете — события парсить не нужно.
+        # доп. каналы для TD (обычные поля, события парсить не нужно):
+        #   worn  = 1 надет (или ещё не определено) / 0 явно снят
+        #   calib = 100 после готовности калибровки (во время калибровки
+        #           тот же канал тикал 0..100 в лёгком пакете выше)
         out['worn'] = 0 if _worn['state'] is False else 1
+        out['calib'] = 100
         ok = send_to_td(out)
         if ok:
             _sent += 1
