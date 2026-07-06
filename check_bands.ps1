@@ -1,6 +1,6 @@
 # check_bands.ps1 - one-screen status of all three bands.
 # Run: powershell -ExecutionPolicy Bypass -File C:\SENSE_TECH\check_bands.ps1
-# NOTE: keep this file ASCII-only — PowerShell 5.1 reads BOM-less .ps1 as ANSI.
+# NOTE: keep this file ASCII-only - PowerShell 5.1 reads BOM-less .ps1 as ANSI.
 $ErrorActionPreference = 'SilentlyContinue'
 $now = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
 
