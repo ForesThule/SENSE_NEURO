@@ -9,7 +9,7 @@ foreach ($n in 1,2,3) {
     $hb = "C:\SENSE_TECH\logs\neiry_heartbeat_$n.txt"
     $age = '-'
     if (Test-Path $hb) { try { $age = $now - [long]((Get-Content $hb -Raw).Trim()) } catch {} }
-    $last = if (Test-Path "C:\SENSE_TECH\_reader_$n.log") { Get-Content "C:\SENSE_TECH\_reader_$n.log" -Tail 1 } else { '(no log)' }
+    $last = if (Test-Path "C:\SENSE_TECH\_reader_$n.log") { Get-Content "C:\SENSE_TECH\_reader_$n.log" -Tail 1 -Encoding UTF8 } else { '(no log)' }
     "band $n | hb ${age}s | $last"
 }
 
