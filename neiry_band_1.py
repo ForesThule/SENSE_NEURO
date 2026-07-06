@@ -460,6 +460,9 @@ def on_signal(sensor, data):
         out['beta_data'] = sd[0].beta
         out['theta_data'] = sd[0].theta
     if out:
+        # доп. канал для TD: 1 = надет (или ещё не определено), 0 = явно снят.
+        # Идёт обычным полем в том же пакете — события парсить не нужно.
+        out['worn'] = 0 if _worn['state'] is False else 1
         ok = send_to_td(out)
         if ok:
             _sent += 1
