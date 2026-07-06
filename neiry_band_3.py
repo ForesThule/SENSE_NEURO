@@ -234,9 +234,11 @@ def send_to_td(data):
         return False   # UDP: просто дропаем пакет (важно последнее значение), без reset/reconnect
 
 
-def send_event(name, **fields):
-    """Ключевое событие -> NEIRY_EVT_PORT: {"event": name, "ts": unix, "band": LABEL, ...}."""
-    pkt = {'event': name, 'ts': int(time.time()), 'band': BAND_LABEL}
+def send_event(event_name, **fields):
+    """Ключевое событие -> NEIRY_EVT_PORT: {"event": ..., "ts": unix, "band": LABEL, ...}.
+    Первый аргумент назван event_name НАМЕРЕННО: поля событий приходят как
+    kwargs, и поле 'name' (имя устройства) конфликтовало с аргументом name."""
+    pkt = {'event': event_name, 'ts': int(time.time()), 'band': BAND_LABEL}
     pkt.update(fields)
     s = _get_sock()
     if s is None:
@@ -320,9 +322,15 @@ def dump_band_info(sensor):
         if k in info:
             dbg('бенд-инфо %s: %s' % (k, info[k]))
 
-    send_event('band_info', **{k: info[k] for k in
-        ('serial', 'address', 'name', 'family', 'version', 'firmware_mode',
-         'battery', 'channels', 'sampling_frequency') if k in info})
+    evt = {k: info[k] for k in
+           ('serial', 'address', 'family', 'version', 'firmware_mode',
+            'battery', 'channels', 'sampling_frequency') if k in info}
+    if 'name' in info:
+        evt['device_name'] = info['name']   # не 'name': конфликт с аргументом send_event
+    try:
+        send_event('band_info', **evt)
+    except Exception as e:
+        dbg('band_info event drop: %s' % e)
 
 
 def on_state(sensor, state):
